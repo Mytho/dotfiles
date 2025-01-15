@@ -1,11 +1,6 @@
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
--- General
-keymap('n', '<Tab>', ':bnext<CR>', opts)
-keymap('n', '<S-Tab>', ':bprevious<CR>', opts)
-keymap('n', '<C-n>', ':NvimTreeFindFileToggle!<CR>', opts)
-
 -- Windows
 keymap('n', '=', ':vertical resize +5<CR>', opts)
 keymap('n', '-', ':vertical resize -5<CR>', opts)
@@ -34,11 +29,15 @@ vim.cmd([[
   inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 ]])
 
+-- NvimTree
+keymap('n', '<C-n>', ':NvimTreeFindFileToggle!<CR>', opts)
+
 -- FZF
 keymap('n', '<Leader>f', ':Files<CR>', { noremap = true, silent = true })
 keymap('n', '<Leader>b', ':Buffer<CR>', { noremap = true, silent = true })
 keymap('n', '<Leader>r', ':RG<CR>', { noremap = true, silent = true })
 keymap('n', '<Leader>g', ':GF?<CR>', { noremap = true, silent = true })
+keymap('n', '<Leader>m', ':Marks<CR>', { noremap = true, silent = true })
 
 -- GitGutter
 keymap('n', '<C-u>', ':GitGutterUndoHunk<CR>', opts);

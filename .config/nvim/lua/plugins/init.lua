@@ -11,9 +11,6 @@ return {
   { 'junegunn/fzf' },
   { 'junegunn/fzf.vim' },
 
-  -- Marks
-  { "chentoast/marks.nvim", event = "VeryLazy", opts = {} },
-
   -- Colorscheme
   { 'EdenEast/nightfox.nvim' },
 
